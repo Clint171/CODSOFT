@@ -16,7 +16,13 @@ function saveTasks() {
 
 function addTask() {
     const title = prompt('Enter the title');
+    if(!title || title == null) {
+        return;
+    }
     const description = prompt('Enter the description');
+    if(!description || description == null) {
+        return;
+    }
     const id = tasks.length + 1;
     const task = new Task(id, title, description);
     tasks.push(task);
@@ -42,6 +48,12 @@ function updateTask(id) {
     }
     let title = prompt('Enter the new title');
     let description = prompt('Enter the new description');
+    if(!title || title == null) {
+        title = task.title;
+    }
+    if(!description || description == null) {
+        description = task.description;
+    }
     task.title = title;
     task.description = description;
     saveTasks();
