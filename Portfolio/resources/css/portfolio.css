@@ -1,0 +1,330 @@
+/*I like dark theme ;)*/
+  body{
+    background-color: #222;
+    color: #f2f2f2;
+    background-image: url("../img/sl_031420_28950_10.jpg");
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+  }
+  h1{
+    text-align: center;
+    margin: auto;
+  }
+  .header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgba(0,0,0,0.3);
+    margin: 0px auto;
+  }
+  /* Add a black background color to the top navigation */
+  .topnav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: rgba(0,0,0,1);
+    overflow: hidden;
+    border-top: 10px solid hsla(0, 0%, 0%, 0.0);
+    top: 6rem;
+    right: 2rem;
+    width: 200px;
+    transition: all 0.5s ease-in-out;
+  }
+  .nav_icon{
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    right: 2rem;
+    top: 2rem;
+    background-color: rgba(0,0,0,1);
+    border-radius: 20%;
+    border: 2px solid #0442c9;
+  }
+  /* Style the links inside the navigation bar */
+  .topnav span {
+    width: 100%;
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 15px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-bottom: 2px solid rgb(4, 66, 201);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav span:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav span.active {
+    background-color: #0442c9;
+    color: white;
+  }
+
+  /*Style for the image*/
+  .profile_img{
+    width: 198px;
+    border-radius: 100%;
+    border: 2px solid #0442c9;
+  }
+  .main{
+    margin: 0 20px auto;
+  }
+ 
+  #projects_div{
+    background-color: rgba(0,0,0,0);
+  }
+  /*Contacts div styling*/
+  .contacts{
+    width: 440px;
+  }
+  .footer{
+    display: none;
+    position: fixed;
+    top: 25%;
+    left: 20%;
+    right: 20%;
+    background-color: rgba();
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,1);
+    margin: 0px auto;
+    padding: 5px;
+    transition: all 0.5s ease-in-out;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 10px rgba(0,0,0,1);
+  }
+  .footer button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: large;
+    background-color: rgba(0,0,0,0.3);
+    color: white;
+    border: 2px solid #0442c9;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+
+
+.text_div{
+  margin-top: 4px;
+  width: 100%;
+  background-color: rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  min-width: 100%;
+}
+
+a{
+  color: rgb(255,255,255);
+}
+a:hover{
+  color: rgb(4, 66, 201);
+}
+.text_div div{
+  min-width: 350px;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.text_div div .icon{
+  width: 20%;
+  height: auto;
+  margin: 1em;
+  border-radius: 10px;
+  
+}
+.text_div div .icon:hover{
+  background-color: rgba(255,255,255,0.4);
+  
+}
+.text_div div .stat{
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  
+}
+
+.hidden{
+  width: 0;
+}
+.none{
+  display: none;
+}
+.flash{
+  background-color: rgba(256,256,256,1);
+  color: black;
+}
+.flash a{
+  color: black;
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 10%;
+  transition: all 0.5s ease-in-out;
+}
+.card:hover{
+  background-color: rgba(0,0,0,0.8);
+  box-shadow: 0px 0px 10px 10px rgba(0,0,0,1);
+}
+.card-title{
+  text-align: center;
+  font-size: medium;
+  color:#0554ff;
+  font-weight: bold;
+  margin: 0px;
+  padding: 0px;
+}
+.card-text{
+  text-align: center;
+  color: white;
+}
+.card-img-top{
+  width: 100%;
+  max-width: fit-content;
+  height: 60%;
+  margin-top: 1rem;
+  border-radius: 10px;
+  border: 2px solid #0442c9;
+}
+.cursor{
+  color: #0554ff;
+  position: fixed;
+}
+
+@media screen and (min-width: 200px) and (max-width: 420px) {
+   /* Majority of mobile devices*/
+   body{
+    font-size: small;
+  }
+  h1{
+    text-align: center;
+    font-size: medium;
+  }
+  .flex{
+    flex-direction:column;
+  }
+  .topnav {
+    top: 3.8rem;
+    right: 1rem;
+  }
+    
+  .topnav span {
+    font-size: small;
+  }
+
+  .profile_img{
+    width: 100px;
+  }
+  .nav_icon{
+    width: 40px;
+    height: 40px;
+    right: 1rem;
+    top: 1rem;
+  }
+  .footer{
+    top: 0%;
+    left: auto;
+    right: auto;
+    bottom:0%;
+    width: 100%;
+    align-items: flex-start;
+    padding-top: 30%;
+    
+
+  }
+  .footer button{
+    bottom: 30%;
+    right:auto;
+
+  }
+  .contacts{
+    font-size: small;
+  }
+  .text_div{
+    width: 100%;
+  }
+  .sticky + .main {
+    padding-top: 60px;
+  }
+  .text_div div{
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 421px) and (max-width: 768px) {
+  /* Majority of mobile devices*/
+  body{
+    font-size: small;
+  }
+  h1{
+    text-align: center;
+    font-size: medium;
+  }
+  .topnav {
+    top: 3.8rem;
+    right: 1rem;
+  }
+    
+  .topnav span {
+    font-size: small;
+  }
+
+  .profile_img{
+    width: 115px;
+  }
+  .nav_icon{
+    width: 40px;
+    height: 40px;
+    right: 1rem;
+    top: 1rem;
+  }
+  .footer{
+    top: 0%;
+    left: auto;
+    right: auto;
+    bottom:0%;
+    width: 100%;
+    align-items: flex-start;
+    padding-top: 30%;
+
+  }
+  .footer button{
+    bottom: 30%;
+    right:auto;
+
+  }
+  .contacts{
+    font-size: small;
+  }
+  .text_div{
+    width: 100%;
+  }
+  .sticky + .main {
+    padding-top: 60px;
+  }
+  .text_div div{
+    width: 100%;
+  }
+}
