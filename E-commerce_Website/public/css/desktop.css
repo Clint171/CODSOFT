@@ -211,3 +211,48 @@
 .checkout:hover{
     background-color: #ba8720;
 }
+
+.payment-div{
+    margin : 1em auto;
+    border-radius: 1em;
+    padding: 1em;
+    width : 42em;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.delivery-div{
+    margin : 1em auto;
+    border-radius: 1em;
+    padding: 1em;
+    width : 42em;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.order-div{
+    margin : 1em auto;
+    border-radius: 1em;
+    padding: 1em;
+    width : 42em;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.place-order-btn{
+    font-size: larger;
+    font-weight: 800;
+    margin : 1em auto;
+    border-radius: 1em;
+    padding: 1em;
+    width : 30em;
+    background-color: #f2a814;
+    text-align: center;
+}
+.place-order-btn:hover{
+    cursor: pointer;
+    background-color: #ba8720;
+}

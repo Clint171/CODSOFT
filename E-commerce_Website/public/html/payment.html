@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clint's Store - Product</title>
+    <title>Clint's Store - Checkout</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" media="screen and (min-width : 400px)" href="../css/desktop.css">
     <link rel="stylesheet" media="screen and (max-width : 400px)" href="../css/phone.css">
 </head>
 <body>
-    <div class="hook-container">
+    <!-- <div class="hook-container">
         <div class="hook">FREE DELIVERY</div>
         <div class="shake">ORDER NOW!!</div>
-    </div>
+    </div> -->
     <div class="navbar" id="navbar">
         <div>
             <div class="nav-btn">
@@ -36,90 +36,66 @@
         </div>
     </div>
     <div class="main">
-        <div class="cart">
-            <h1>Cart</h1>
-            <div class="cart-item">
-                <img src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/54/2663251/1.jpg?4695">
-                <div class="cart-item-info">
-                    <h2>ColorScreen SmartWatch Heart monitor</h2>
-                    <span class="price">Ksh 818</span>
-                    <div class="qty-div">
-                        <p>Quantity: <span id="pricing">1</span></p>
-                        <div><iconify-icon icon="carbon:add-filled" width="40" height="40" ></iconify-icon> <iconify-icon icon="carbon:subtract-filled" width="40" height="40"></iconify-icon></div>
-                        <p class="price">Total: Ksh <span id="total">818</span></p>
-                        <button class="remove-btn">Remove</button>
-                    </div>
-                </div>
-            </div>
-            <div class="cart-item">
-                <img src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/54/2663251/1.jpg?4695">
-                <div class="cart-item-info">
-                    <h2>ColorScreen SmartWatch Heart monitor</h2>
-                    <span class="price">Ksh 818</span>
-                    <div class="qty-div">
-                        <p>Quantity: <span id="pricing">1</span></p>
-                        <div><iconify-icon icon="carbon:add-filled" width="40" height="40" ></iconify-icon> <iconify-icon icon="carbon:subtract-filled" width="40" height="40"></iconify-icon></div>
-                        <p class="price">Total: Ksh <span id="total">818</span></p>
-                        <button class="remove-btn">Remove</button>
-                    </div>
-                </div>
-            </div>
+        <div class="order-div">
+            <h2>Order details</h2>
+            <h3>Items price</h3>
+            <p>Ksh 818</p>
+            <h3>Delivery price</h3>
+            <p>Ksh 0</p>
+            <h3>Total</h3>
+            <p>Ksh 818</p>
         </div>
-        <div class="totals-div">
-            <div class="totals">
-                <h2>Cart Totals</h2>
-                <div class="total">
-                    <span class="emphasis">Subtotal: </span>
-                    <span>Ksh 818</span>
-                </div>
-                <div class="total">
-                    <span class="emphasis">Shipping: </span>
-                    <span>Free</span>
-                </div>
-                <div class="total">
-                    <span class="emphasis">Total: </span>
-                    <span>Ksh 818</span>
-                </div>
-                <button class="checkout">Proceed to Checkout</button>
-            </div>
+        <div class="payment-div">
+            <h2>Payment</h2>
+            <form>
+                <fieldset>
+                    <legend>Pay now</legend>
+                    <input type="radio" name="pay-radio">
+                    <label for="pay-radio">Pay online</label><br>
+                    <select>
+                        <option>Select an option</option>
+                        <option>Mpesa</option>
+                        <option>Paypal</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <legend>Pay later</legend>
+                    <input type="radio" name="pay-radio">
+                    <label for="pay-on-delivery">Pay on delivery</label><br>
+                    <iconify-icon icon="arcticons:m-pesa" width="70" height="70" style="color:#7b00ff;"></iconify-icon>
+                    <iconify-icon icon="cib:cc-paypal" width="70" height="70" style="color:#7b00ff;"></iconify-icon>
+                </fieldset>
+            </form>
         </div>
-        <div class="section">
-            <div class="section-title">
-                <span>Continue Browsing</span>
-            </div>
-            <div class="row">
-                <div class="row-item">
-                    <img src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/54/2663251/1.jpg?4695">
-                    <span>ColorScreen SmartWatch Heart monitor</span>
-                    <span class="price">Ksh 515</span>
-                </div>
-                <div class="row-item">
-                    <img src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/54/2663251/1.jpg?4695">
-                    <span>ColorScreen SmartWatch Heart monitor</span>
-                    <span class="price">Ksh 515</span>
-                </div>
-                <div class="row-item">
-                    <img src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/54/2663251/1.jpg?4695">
-                    <span>ColorScreen SmartWatch Heart monitor</span>
-                    <span class="price">Ksh 515</span>
-                </div>
-                <div class="row-item">
-                    <img src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/54/2663251/1.jpg?4695">
-                    <span>ColorScreen SmartWatch Heart monitor</span>
-                    <span class="price">Ksh 515</span>
-                </div>
-                <div class="row-item">
-                    <img src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/54/2663251/1.jpg?4695">
-                    <span>ColorScreen SmartWatch Heart monitor</span>
-                    <span class="price">Ksh 515</span>
-                </div>
-                <div class="row-item">
-                    <img src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/54/2663251/1.jpg?4695">
-                    <span>ColorScreen SmartWatch Heart monitor</span>
-                    <span class="price">Ksh 515</span>
-                </div>
-            </div>
+        <div class="delivery-div">
+            <h2>Delivery</h2>
+            <form action="">
+                <fieldset>
+                    <legend>Shop delivery</legend>
+                    <span>Package will be delivered to the nearest shop to your location</span><br>
+                    <input type="radio" name="deliver-to" value="shop">
+                    <label for="deliver-to">Deliver to shop</label><br>
+                    <select name="shop-location">
+                        <option value="0">Select a location</option>
+                        <option value="Nairobi">Nairobi</option>
+                        <option value="Mombasa">Mombasa</option>
+                        <option value="Kisumu">Kisumu</option>
+                        <option value="Nakuru">Nakuru</option>
+                        <option value="Konza">Konza</option>
+                    </select>
+    
+                </fieldset>
+                <fieldset>
+                    <legend>Home Delivery</legend>
+                    <span>Package will be delivered to your doorstep</span><br>
+                    <input type="radio" name="deliver-to" value="home">
+                    <label for="deliver-to">Deliver to doorstep</label><br>
+                    <label for="delivery-address">Address: </label>
+                    <input type="address" name="delivery-address">
+                </fieldset>
+            </form>
         </div>
+        <a href="order-placed.html"><div class="place-order-btn">Place order & Finish</div></a>
     </div>
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <script src="../js/home.js"></script>

@@ -14,6 +14,11 @@ iconify-icon:hover{
     color: #7b00ff;
 }
 
+input[type="text"]{
+    width: 80%;
+    border-radius: 1em;
+}
+
 a{
     all: unset;
 }
