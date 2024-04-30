@@ -21,6 +21,8 @@ input[type="text"]{
 
 a{
     all: unset;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .fixed{
