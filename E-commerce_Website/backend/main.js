@@ -1,11 +1,17 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const cookieParser = require("cookie-parser");
+
+//routers
+const productRouter = require("./routers/product.js");
 
 dotenv.config();
 
+const port = process.env.PORT || 3000;
+
 mongoose.connect(process.env.MONGO_URL , {
-    dbName : ecommmerce
+    dbName : "ecommerce"
 });
 
 const db = mongoose.connection;
@@ -20,10 +26,10 @@ db.once("open" , ()=>{
 
 const app = express();
 
-const port = process.env.PORT || 3000;
-
-
+app.use(express.json());
+app.use(cookieParser());
+app.use("/api/products" , productRouter);
 
 app.listen(port , ()=>{
     console.log("App listening on port: "+ port);
-})
+});
