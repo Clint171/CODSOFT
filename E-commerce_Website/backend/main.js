@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 
 //routers
 const productRouter = require("./routers/product.js");
+const categoryRouter = require("./routers/category.js");
 
 dotenv.config();
 
@@ -29,6 +30,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use("/api/products" , productRouter);
+app.use("/api/categories" , categoryRouter);
 
 app.listen(port , ()=>{
     console.log("App listening on port: "+ port);

@@ -1,4 +1,3 @@
-const e = require("express");
 const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema({
@@ -17,6 +16,8 @@ const categorySchema = new mongoose.Schema({
         ref : "Product"
     }]
 });
+
+const Category = mongoose.model("Category" , categorySchema);
 
 const userSchema = new mongoose.Schema({
     name : String,
@@ -72,75 +73,119 @@ const reviewSchema = new mongoose.Schema({
 
 const Review = mongoose.model("Review" , reviewSchema);
 
-// //mock data
+//Mock data
 
-// const product1 = new Product({
-//     name : "Laptop",
-//     description : "This is a laptop",
-//     price : 1000,
-//     category : "electronics",
-//     image : "https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/48/0782091/1.jpg?7168"
+// let product1 = new Product({
+//     name : "Iphone 12",
+//     description : "Apple Iphone 12",
+//     price : 80000,
+//     image : "https://www.apple.com/newsroom/images/product/iphone/standard/Apple_announce-iphone12pro_10132020_big.jpg.large.jpg"
 // });
 
-// const product2 = new Product({
-//     name : "Headphones",
-//     description : "This is a headphone",
-//     price : 100,
-//     category : "electronics",
-//     image : "https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/50/6522251/1.jpg?9010"
+// product1.save();
+
+// let product2 = new Product({
+//     name : "Samsung Galaxy S21",
+//     description : "Samsung Galaxy S21",
+//     price : 70000,
+//     image : "https://www.gizmochina.com/wp-content/uploads/2021/01/Samsung-Galaxy-S21-Ultra-5G.jpg"
 // });
 
-// const product3 = new Product({
-//     name : "Mobile",
-//     description : "This is a mobile",
-//     price : 500,
-//     category : "electronics",
-//     image : "https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/98/0308071/1.jpg?0267"
+// product2.save();
+
+// let product3 = new Product({
+//     name : "One Plus 9",
+//     description : "One Plus 9",
+//     price : 60000,
+//     image : "https://www.gizmochina.com/wp-content/uploads/2021/03/OnePlus-9-Pro.jpg"
 // });
 
-// const user1 = new User({
+// product3.save();
+
+// let category1 = new Category({
+//     name : "Mobiles",
+//     products : [product1._id , product2._id , product3._id]
+// });
+
+// category1.save();
+
+// let user1 = new User({
 //     name : "John",
 //     email : "john@email.com",
 //     password : "john123"
 // });
 
-// const user2 = new User({
-//     name : "Doe",
-//     email : "doe@email.com",
-//     password : "doe123"
+// user1.save();
+
+// let user2 = new User({
+//     name : "Jane",
+//     email : "jane@email.com",
+//     password : "jane123"
 // });
 
-// const order1 = new Order({
-//     userId : user1.id,
-//     products : [{productId : product1.id , quantity : 2}],
-//     amount : 2000
+// user2.save();
+
+// let order1 = new Order({
+//     userId : user1._id,
+//     products : [
+//         {
+//             productId : product1._id,
+//             quantity : 2
+//         },
+//         {
+//             productId : product2._id,
+//             quantity : 1
+//         }
+//     ],
+//     amount : 230000
 // });
 
-// const order2 = new Order({
-//     userId : user2.id,
-//     products : [{productId : product2.id , quantity : 1}],
-//     amount : 100
+// order1.save();
+
+// let order2 = new Order({
+//     userId : user2._id,
+//     products : [
+//         {
+//             productId : product3._id,
+//             quantity : 1
+//         }
+//     ],
+//     amount : 60000
 // });
 
-// const review1 = new Review({
-//     userId : user1.id,
-//     productId : product1.id,
-//     review : "This is a good product",
+// order2.save();
+
+// let review1 = new Review({
+//     userId : user1._id,
+//     productId : product1._id,
+//     review : "Good product",
 //     rating : 4
 // });
 
-// product1.save();
-// product2.save();
-// product3.save();
-// user1.save();
-// user2.save();
-// order1.save();
-// order2.save();
 // review1.save();
+
+// let review2 = new Review({
+//     userId : user2._id,
+//     productId : product2._id,
+//     review : "Great product",
+//     rating : 5
+// });
+
+// review2.save();
+
+// let review3 = new Review({
+//     userId : user1._id,
+//     productId : product3._id,
+//     review : "Nice product",
+//     rating : 4
+// });
+
+// review3.save();
 
 module.exports = {
     Product,
     User,
     Order,
-    Review
+    Review,
+    Category
 }

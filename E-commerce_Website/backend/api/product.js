@@ -5,16 +5,26 @@ let createProduct = (req, res) => {
         name: req.body.name,
         price: req.body.price,
         description: req.body.description,
-        category: req.body.category,
         image: req.body.image
     });
     product.save();
+    let category = schema.Category.find({name: req.body.category});
+    if(category.name){
+        category.products.push(product._id);
+        category.save();
+    }
+    else{
+        category = new schema.Category({
+            name: req.body.category,
+            products: [product._id]
+        });
+        category.save();
+    }
     res.json(product);
 }
 
 let getProducts = async (req, res) => {
     let products = await schema.Product.find();
-
     res.json(products);
 }
 
@@ -43,25 +53,8 @@ let searchProducts = async (req, res) => {
 }
 
 let getProductsByPrice = async (req , res) => {
-    if(req.params.price !== "asc" || req.params.price !== "desc") return res.sendStatus(400);
     let products = await schema.Product.find({}).sort({price : req.params.price});
     res.json(products);
-}
-
-let getProductsByCategories = async (req, res) => {
-    try{
-        let categories = await schema.Product.find().distinct("category");
-
-        let products = []
-        for (let i = 0; i < categories.length; i++) {
-            let product = await schema.find({category: categories[i]});
-            products.push(product);
-        }
-        res.json(products);
-    } catch(e) {
-        console.log(e);
-        res.sendStatus(500);
-    }
 }
 
 module.exports = {
@@ -71,6 +64,5 @@ module.exports = {
     updateProduct,
     deleteProduct,
     searchProducts,
-    getProductsByPrice,
-    getProductsByCategories
+    getProductsByPrice
 }

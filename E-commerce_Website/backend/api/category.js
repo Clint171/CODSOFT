@@ -1,26 +1,10 @@
 const schema = require("../schema/schema.js");
 
-let getCategories = (req, res) => {
-    schema.Product.find().distinct("category", (err, categories) => {
-        if (err) {
-            res.status(500).json(err);
-            return;
-        }
-        res.json(categories);
-    });
-}
-
-let getProductsByCategory = (req, res) => {
-    schema.Product.find({category: req.params.category}, (err, products) => {
-        if (err) {
-            res.status(500).json(err);
-            return;
-        }
-        res.json(products);
-    });
+let getCategories = async (req, res) => {
+    let categories = await schema.Category.find().populate("products");
+    res.json(categories);
 }
 
 module.exports = {
-    getCategories,
-    getProductsByCategory
+    getCategories
 }
