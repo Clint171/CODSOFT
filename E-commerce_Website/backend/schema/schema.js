@@ -88,7 +88,7 @@ const Review = mongoose.model("Review" , reviewSchema);
 //     name : "Samsung Galaxy S21",
 //     description : "Samsung Galaxy S21",
 //     price : 70000,
-//     image : "https://www.gizmochina.com/wp-content/uploads/2021/01/Samsung-Galaxy-S21-Ultra-5G.jpg"
+//     image : "https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/28/9399121/1.jpg?7761"
 // });
 
 // product2.save();
@@ -97,7 +97,7 @@ const Review = mongoose.model("Review" , reviewSchema);
 //     name : "One Plus 9",
 //     description : "One Plus 9",
 //     price : 60000,
-//     image : "https://www.gizmochina.com/wp-content/uploads/2021/03/OnePlus-9-Pro.jpg"
+//     image : "https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/75/508566/1.jpg?5825"
 // });
 
 // product3.save();

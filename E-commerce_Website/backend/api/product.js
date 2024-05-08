@@ -1,6 +1,6 @@
 const schema = require("../schema/schema");
 
-let createProduct = (req, res) => {
+let createProduct = async (req, res) => {
     let product = new schema.Product({
         name: req.body.name,
         price: req.body.price,
@@ -8,8 +8,8 @@ let createProduct = (req, res) => {
         image: req.body.image
     });
     product.save();
-    let category = schema.Category.find({name: req.body.category});
-    if(category.name){
+    let category = await schema.Category.findOne({name: req.body.category});
+    if(category){
         category.products.push(product._id);
         category.save();
     }
