@@ -1,17 +1,17 @@
 const schema = require("../schema/schema.js");
 
-let createOrder = (req, res) => {
+let createOrder = async (req, res) => {
     let order = new schema.Order({
-        products: req.body.products
+        products: req.body.products,
+        amount: 0,
+        deliveryStatus: "pending",
+        payment: "pending"
     });
-    order.amount = 0;
-    order.products.forEach(async (product) => {
-        let productDetails = await schema.Product.findById(product.productId);
-        order.amount += productDetails.price * product.quantity;
-    });
-    order.deliveryStatus = "Pending";
-    order.payment = "Pending";
-    order.save();
+    for(let i = 0; i < order.products.length; i++){
+        let product = await schema.Product.findById(order.products[i].productId);
+        order.amount += product.price * order.products[i].quantity;  
+    }
+    //order.save();
     res.json(order);
 }
 
