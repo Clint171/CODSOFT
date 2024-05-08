@@ -42,15 +42,15 @@ function displayProduct(product){
                 <span class="price">Ksh ${product.price}</span>
                 <div class="qty-div">
                     <p>Quantity: <span id="pricing">${qty}</span></p>
-                    <div><iconify-icon icon="carbon:add-filled" width="40" height="40" onclick='addToCart('${localStorage.getItem("productId")}')'></iconify-icon> <iconify-icon icon="carbon:subtract-filled" width="40" height="40" onclick='removeOneItemFromCart('${localStorage.getItem("productId")}')'></iconify-icon></div>
+                    <div><iconify-icon icon="carbon:add-filled" width="40" height="40" onclick='addToCart("${localStorage.getItem('productId')}")'></iconify-icon> <iconify-icon icon="carbon:subtract-filled" width="40" height="40" onclick='removeOneItemFromCart("${localStorage.getItem('productId')}")'></iconify-icon></div>
                     <p class="price">Total: Ksh <span id="total">${total}</span></p>
                 </div>
-                <button class="add-to-cart" onclick='addToCart('${localStorage.getItem("productId")}')'>Add to Cart</button>
+                <button class="add-to-cart" onclick='addToCart("${localStorage.getItem('productId')}")'>Add to Cart</button>
             </div>
         </div>
         <div class="product-description">
             <h2>Description</h2>
             <p>${product.description}</p>
         </div>
-    `;
+   `;
 }

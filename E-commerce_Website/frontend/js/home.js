@@ -77,19 +77,31 @@ if(cart === null){
     products : [],
     total : 0
   };
+  localStorage.setItem("cart" , JSON.stringify(cart));
 }
 else{
   document.getElementById("cart-filled").style.display = "inline";
 }
 
-function addToCart(productId){
+async function addToCart(productId){
   let product = cart.products.find(item => item.productId === productId);
   if(product){
     product.quantity++;
   } else {
+    product = await fetch(serverUrl + "api/products/" + productId , {
+      method : "GET",
+      headers : {
+          "Content-Type" : "application/json",
+          "Accept" : "application/json"
+      }
+    }).then(response => response.json())
+    .then(data => {
+      return data;
+    });
     cart.products.push({
       productId : productId,
-      quantity : 1
+      quantity : 1,
+      price : product.price
     });
   }
   cart.total += product.price;
